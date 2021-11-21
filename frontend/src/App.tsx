@@ -1,25 +1,22 @@
 import React from 'react';
-import {Carousel} from "./components/Carousel";
-import {Feeds} from "./model/feed";
-import './App.css'
-import {Banner} from "./components/Banner";
+import {BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import './App.css';
 import {Nav} from "./components/Nav";
+import LandingPage from "./pages/LandingPage";
+import MoviesPage from "./pages/MoviesPage";
 
 function App() {
-    return (
-        <div className="App">
-
-            <Nav/>
-            <Banner feed= {Feeds.netflix} ></Banner>
-            <Carousel feed= {Feeds.netflix} ></Carousel>
-            <Carousel feed= {Feeds.topRated} ></Carousel>
-            <Carousel feed= {Feeds.actionMovies} ></Carousel>
-            <Carousel feed= {Feeds.comedyMovies} ></Carousel>
-            <Carousel feed= {Feeds.horrorMovies} ></Carousel>
-            <Carousel feed= {Feeds.romanceMovies} ></Carousel>
-            <Carousel feed= {Feeds.documentaries} ></Carousel>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Nav/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/movies" element={<MoviesPage/>}/>
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
