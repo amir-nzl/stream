@@ -1,8 +1,9 @@
 * {
-    margin: 0;
+  margin: 0;
 }
 
 .App {
-    background-color: #111;
-    font-family: 'Bebas Neue';
+  background-color: #111;
+  color: white;
+  font-family: 'Bebas Neue';
 }

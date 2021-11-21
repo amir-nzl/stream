@@ -1,12 +1,12 @@
-import {fetchMovies, fetchTvShows, topRated} from "../client/tmdb";
-import {Genre, Network} from "../client/constants";
-import {AxiosResponse} from "axios";
+
+import {content, Genre, Network} from "../client/constants";
 
 
 export interface Feed {
-    getContent: Promise<AxiosResponse>;
+    url: string
     title: string;
-    isLarge: boolean
+    isLarge: boolean;
+    name: string;
 }
 
 interface FeedMap {
@@ -15,38 +15,45 @@ interface FeedMap {
 
 export const Feeds: FeedMap = {
     netflix: {
-        getContent: fetchTvShows(Network.NETFLIX),
+        url: content.byNetwork(Network.NETFLIX),
         title: "Netflix Originals",
-        isLarge: true
+        isLarge: true,
+        name: "netflix"
     },
     topRated: {
-        getContent: topRated(),
+        url: content.topRated(),
         title: "Top Rated",
-        isLarge: false
+        isLarge: false,
+        name: "top_rated"
     },
     actionMovies: {
-        getContent: fetchMovies(Genre.ActionMovies),
+        url: content.byGenre(Genre.ActionMovies),
         title: "Action Movies",
-        isLarge: false
+        isLarge: false,
+        name: "action_movies"
     },
     comedyMovies: {
-        getContent: fetchMovies(Genre.Comedy),
+        url: content.byGenre(Genre.Comedy),
         title: "Comedy Movies",
-        isLarge: false
+        isLarge: false,
+        name: "comedy_movies"
     },
     horrorMovies: {
-        getContent: fetchMovies(Genre.Horror),
+        url: content.byGenre(Genre.Horror),
         title: "Horror Movies",
-        isLarge: false
+        isLarge: false,
+        name: "horror_movies"
     },
     romanceMovies: {
-        getContent: fetchMovies(Genre.Romance),
+        url: content.byGenre(Genre.Romance),
         title: "Romantic Movies",
-        isLarge: false
+        isLarge: false,
+        name: "romance_movies"
     },
     documentaries: {
-        getContent: fetchMovies(Genre.Documentary),
+        url: content.byGenre(Genre.Documentary),
         title: "Documentary",
-        isLarge: false
+        isLarge: false,
+        name: "documentary"
     }
 };

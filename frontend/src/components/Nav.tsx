@@ -24,8 +24,7 @@ export const Nav: FC = () => {
             }
         });
         return () => {
-            // @ts-ignore
-            window.removeEventListener("scroll");
+            window.removeEventListener("scroll", ()=>{});
         };
     }, []);
     return (
