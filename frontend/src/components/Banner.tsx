@@ -3,8 +3,6 @@ import {Feed} from "../model/feed";
 import {TMDB_IMG_URL} from "../client/constants";
 import {Button, Content, Description, Fade, Header, Title} from "./Banner.styled";
 import {useNavigate} from "react-router-dom";
-import YouTube, {Options} from "react-youtube";
-import {Video} from "./Carousel.styled";
 import {useQuery} from "react-query";
 import axios from "axios";
 
@@ -31,16 +29,6 @@ export const Banner: FC<{ feed: Feed }> = ({feed}) => {
           setPlayButtonLabel('Play');
         });
     }
-  };
-  const opts: Options = {
-    width: '100%',
-    playerVars: {
-      origin: window.location.href,
-      autoplay: 1,
-      modestbranding: 1,
-      rel: 0,
-      showinfo: 0
-    },
   };
 
   const {data, isSuccess} = useQuery(feed.name, () => axios.get<any>(feed.url));
