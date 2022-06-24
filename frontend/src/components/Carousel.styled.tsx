@@ -13,27 +13,10 @@ export const Items = styled.div`
  display: flex;
  padding: 20px;
  &::-webkit-scrollbar {
-  display: none;       
+  display: none;
  }
 `;
 export const Item = styled.div``;
-export const Image = styled.img<{ isLarge: boolean }>`
- object-fit: contain;
- max-height: 150px; 
- transition: transform 450ms; 
- margin-right: 15px;
- &:hover {
-    transform: scale(1.08);
-  }
- 
-  ${({isLarge}) => isLarge && `
-     max-height: 250px;
-     margin-right: 10px;
-     &:hover {
-      transform: scale(1.09);
-     }
- `} 
-`;
 
 export const Video = styled.div`
 display: block;
