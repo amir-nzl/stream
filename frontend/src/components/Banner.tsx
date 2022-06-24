@@ -35,14 +35,13 @@ export const Banner: FC<{ feed: Feed }> = ({feed}) => {
   useEffect(() => {
     let randomItem = data?.data.results[Math.floor(Math.random() * data.data.results.length)];
     setContent(randomItem);
-  }, [feed,data]);
+  }, [feed, data]);
 
 
   return (
     <>
       {isSuccess &&
       <Header style={{backgroundImage: `url(${TMDB_IMG_URL}/${content?.backdrop_path})`,}}>
-
         <Content>
           <Title>{content?.title || content?.name || content?.original_name}</Title>
           <Button onClick={() => handlePlayButtonClick(content)}>{playButtonLabel}</Button>

@@ -46,7 +46,7 @@ export const Button = styled.button`
   background-color: #e6e6e6;
   transition: all 0.2s;
  }
- 
+
 `;
 
 export const Fade = styled.div`

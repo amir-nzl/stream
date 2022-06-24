@@ -2,9 +2,10 @@ import React, {FC} from 'react';
 import {Feeds} from "../model/feed";
 import {Carousel} from "../components/Carousel";
 import {Banner} from "../components/Banner";
+import {Container} from "../styles";
 
 const LandingPage: FC = () => (
-  <div className="App" style={{backgroundColor : '#111'}}>
+  <Container className="App" style={{backgroundColor : '#111'}}>
     <Banner feed={Feeds.topRated}></Banner>
     <Carousel feed={Feeds.netflix}></Carousel>
     <Carousel feed={Feeds.topRated}></Carousel>
@@ -13,7 +14,7 @@ const LandingPage: FC = () => (
     <Carousel feed={Feeds.horrorMovies}></Carousel>
     <Carousel feed={Feeds.romanceMovies}></Carousel>
     <Carousel feed={Feeds.documentaries}></Carousel>
-  </div>
+  </Container>
 );
 
 export default LandingPage;

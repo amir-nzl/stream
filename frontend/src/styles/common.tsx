@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+ background-color: #111;
+ width: 100%;
+ z-index: 1;
+`;
+
 export const Image = styled.img<{ isLarge: boolean }>`
  object-fit: contain;
  max-height: 150px;
@@ -19,15 +25,16 @@ export const Image = styled.img<{ isLarge: boolean }>`
 `;
 
 export const Page = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-flow: column wrap;
+`;
+
+export const ContentWrapper = styled.div`
+align-self: stretch;
 `;
 
 export const Content = styled.div`
+
  display: flex;
  align-items: center;
- justify-content: center;
+ justify-content: space-evenly;
  flex-flow: row wrap;
 `;
